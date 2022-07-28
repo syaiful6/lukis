@@ -58,6 +58,8 @@ async def render(req: RenderRequest):
                     "fullPage": req.screenshot.full_page,
                 }
             )
+
+        await page.close()
         
         return RenderReponse(
             screenshot=base64.standard_b64encode(image) if image else None,
