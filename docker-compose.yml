@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    build: .
+    environment:
+      ENVIRONMENT: local
+      CHROME_WEBSOCKET: ${CHROME_WEBSOCKET}
+    volumes:
+      - ./:/app
+    ports:
+      - 8000:8000
